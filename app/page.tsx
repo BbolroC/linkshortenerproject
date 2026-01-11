@@ -1,6 +1,6 @@
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import { SignInButton, SignUpButton } from "@clerk/nextjs";
+import { SignUpButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -36,11 +36,6 @@ export default async function Home() {
                 Get Started Free
               </Button>
             </SignUpButton>
-            <SignInButton mode="modal">
-              <Button size="lg" variant="outline" className="text-base">
-                Sign In
-              </Button>
-            </SignInButton>
           </div>
         </div>
       </section>
