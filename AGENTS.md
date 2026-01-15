@@ -78,7 +78,16 @@ import { Button } from "../components/ui/button"; // ❌
 /lib
   utils.ts        # Utility functions (includes cn())
 /docs             # Agent instruction files (this folder)
+proxy.ts          # Proxy configuration (DO NOT use middleware.ts)
 ```
+
+### Middleware/Proxy Configuration
+⚠️ **CRITICAL: NEVER use middleware.ts**
+
+- **DO NOT** create or use `middleware.ts` - it is deprecated in Next.js 16.1.1 (the version used in this project)
+- **ALWAYS** use `proxy.ts` for any proxy or middleware-like configuration
+- The `middleware.ts` pattern is no longer supported in later versions of Next.js
+- If you need to implement request interception or routing logic, use `proxy.ts`
 
 ### Environment Variables
 Required variables (must be set in `.env.local`):
@@ -227,6 +236,7 @@ Before generating code, verify:
 - [ ] Server Components by default (no `"use client"` unless needed)
 - [ ] Authentication checked for protected routes/APIs
 - [ ] Path aliases used (`@/components`, `@/lib`, etc.)
+- [ ] **NEVER using middleware.ts** (use proxy.ts instead)
 - [ ] Tailwind classes used for styling
 - [ ] `cn()` utility used for conditional classes
 - [ ] Database queries use Drizzle ORM

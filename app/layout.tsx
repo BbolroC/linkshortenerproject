@@ -38,6 +38,8 @@ export default function RootLayout({
       appearance={{
         baseTheme: shadcn,
       }}
+      signInForceRedirectUrl="/dashboard"
+      signUpForceRedirectUrl="/dashboard"
     >
       <html lang="en" className="dark">
         <body
