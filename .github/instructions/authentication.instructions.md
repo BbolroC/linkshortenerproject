@@ -1,3 +1,7 @@
+---
+description: Read this before implemnenting or modifying authentication in the project.
+---
+
 # Authentication Instructions
 
 ## Overview

@@ -4,15 +4,6 @@
 
 This document provides comprehensive coding standards and guidelines for AI agents (LLMs) working on this Link Shortener project. All code generated must adhere to these standards to ensure consistency, quality, and maintainability.
 
-## ⚠️ CRITICAL: Read Documentation First
-
-**BEFORE generating ANY code, you MUST read the relevant documentation files in the `/docs` directory:**
-
-- **Authentication & Authorization**: Read [docs/authentication.md](docs/authentication.md) for Clerk integration patterns, protected routes, modal-based sign in/sign up, and security requirements
-- **UI Components**: Read [docs/ui-components.md](docs/ui-components.md) for shadcn/ui component usage standards and requirements - ALL UI elements must use shadcn/ui components
-
-**This is NOT optional. Failure to consult these files will result in code that does not meet project requirements.**
-
 ## Core Principles
 
 ### 1. Type Safety First
@@ -77,7 +68,6 @@ import { Button } from "../components/ui/button"; // ❌
   index.ts        # Database connection
 /lib
   utils.ts        # Utility functions (includes cn())
-/docs             # Agent instruction files (this folder)
 proxy.ts          # Proxy configuration (DO NOT use middleware.ts)
 ```
 
@@ -231,7 +221,6 @@ const [updatedLink] = await db
 
 Before generating code, verify:
 
-- [ ] **READ relevant /docs files first** (authentication.md, ui-components.md, etc.)
 - [ ] Using TypeScript with explicit types
 - [ ] Server Components by default (no `"use client"` unless needed)
 - [ ] Authentication checked for protected routes/APIs
@@ -247,17 +236,6 @@ Before generating code, verify:
 - [ ] Responsive design with Tailwind breakpoints
 - [ ] No hardcoded environment variables
 - [ ] ESLint rules followed
-
-## Documentation Files - Required Reading
-
-**⚠️ MANDATORY: You MUST read the relevant documentation files BEFORE writing any code.**
-
-The `/docs` directory contains detailed specifications that override any assumptions:
-
-- **[docs/authentication.md](docs/authentication.md)** - Clerk integration patterns, protected routes, modal-based sign in/sign up, security requirements. READ THIS before implementing ANY authentication-related code.
-- **[docs/ui-components.md](docs/ui-components.md)** - shadcn/ui component usage standards and requirements. READ THIS before creating ANY UI components or pages.
-
-**Do NOT skip this step. Do NOT assume you know the requirements. ALWAYS read the relevant documentation file first.**
 
 ## Summary
 
